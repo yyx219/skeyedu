@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>德莱联盟-基本信息配置</title>
+    <link rel="stylesheet" href="../frame/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../frame/bootstrapvalidator/css/bootstrapValidator.css">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="styles/admin.css">
+    <link rel="stylesheet" href="styles/leftMenu.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>友情链接<small>管理</small></h1>
+        </div>
+        <table class="table table-hover table-dark">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>网站名称</th>
+                    <th>链接地址</th>
+                    <th>网站logo</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5">
+                       友情链接
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <script src="../frame/jquery.js"></script>
+    <script src="../frame/bootstrap/js/bootstrap.js"></script>
+    <script src="scripts/admin.js"></script>
+    <script src="../frame/bootstrapvalidator/js/bootstrapValidator.js"></script>
+    <script>
+        $.get('../api/getLinks.php', function (res) {
+            var links = res.links;
+            $.each(links, function (index, val) {
+                var tr = $("<tr>\
+                   <td>" + val.id + "</td>\
+                   <td>" + val.title + "</td>\
+                   <td>" + val.url + "</td>\
+                   <td><img src=" + val.imgUrl + " width='100'></td>\
+                   <td><button type='button' class='btn btn-danger'>删除</button><button type='button' class='btn btn-warning'>修改</button>   </td>\
+                </tr>");
+
+                $('tbody').append(tr)
+            })
+
+        }, 'json')
+    </script>
+</body>
+
+</html>
