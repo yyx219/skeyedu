@@ -1,0 +1,25 @@
+header{
+   height: 50px;
+    background: #333;
+}
+
+section{
+    overflow: hidden;
+    background: #eee;
+}
+
+aside,
+article{
+    float:left;
+    height: 100%;
+    
+}
+
+aside{
+    width:200px;
+    background: #ddd;
+}
+
+article{
+    width: calc(100% - 200px);
+}

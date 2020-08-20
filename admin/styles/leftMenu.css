@@ -1,0 +1,14 @@
+.group{
+    background-color: #eee;
+    
+}
+
+.group h3{
+    background-color: #222;
+    color:#eee;
+}
+
+
+.group ul{
+    display: none;
+}
