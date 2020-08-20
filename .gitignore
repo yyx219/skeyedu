@@ -1,0 +1,13 @@
+### vuecli.net ###
+
+node_modules/
+dist/
+视频/
+.idea/
+frame/bootstrapvalidator-master/
+
+*.mp4
+*.mp3
+npm-debug.log
+yarn-error.log
+
